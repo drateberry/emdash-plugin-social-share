@@ -1,0 +1,10 @@
+{
+	"extends": "astro/tsconfigs/base",
+	"compilerOptions": {
+		"module": "ESNext",
+		"moduleResolution": "Bundler",
+		"strict": true,
+		"noEmit": true
+	},
+	"include": ["src"]
+}

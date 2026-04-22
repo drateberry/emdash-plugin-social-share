@@ -1,0 +1,55 @@
+{
+	"name": "@drateberry/emdash-plugin-social-share",
+	"version": "0.1.0",
+	"description": "Automatically share newly published EmDash CMS posts to Bluesky, Mastodon, and X (Twitter) with optional featured-image attachment.",
+	"type": "module",
+	"main": "./dist/index.mjs",
+	"types": "./dist/index.d.mts",
+	"exports": {
+		".": {
+			"import": "./dist/index.mjs",
+			"types": "./dist/index.d.mts"
+		},
+		"./sandbox": "./dist/sandbox-entry.mjs"
+	},
+	"files": [
+		"dist"
+	],
+	"scripts": {
+		"build": "tsdown src/index.ts src/sandbox-entry.ts --format esm --dts --clean",
+		"dev": "tsdown src/index.ts src/sandbox-entry.ts --format esm --dts --watch",
+		"typecheck": "tsc --noEmit",
+		"prepublishOnly": "npm run build"
+	},
+	"keywords": [
+		"emdash",
+		"emdash-plugin",
+		"cms",
+		"social",
+		"sharing",
+		"bluesky",
+		"mastodon",
+		"twitter",
+		"x",
+		"cross-posting",
+		"fediverse",
+		"at-protocol"
+	],
+	"author": "Drate Berry",
+	"license": "0BSD",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/drateberry/emdash-plugin-social-share.git"
+	},
+	"bugs": {
+		"url": "https://github.com/drateberry/emdash-plugin-social-share/issues"
+	},
+	"homepage": "https://github.com/drateberry/emdash-plugin-social-share#readme",
+	"peerDependencies": {
+		"emdash": ">=0.6.0"
+	},
+	"devDependencies": {
+		"tsdown": "^0.20.3",
+		"typescript": "^5.9.3"
+	}
+}
