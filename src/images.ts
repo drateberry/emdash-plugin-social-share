@@ -1,7 +1,7 @@
 import type { PluginContext } from "emdash";
 
 export interface PostImage {
-	bytes: Uint8Array;
+	bytes: Uint8Array<ArrayBuffer>;
 	contentType: string;
 	alt: string;
 }
@@ -107,7 +107,7 @@ async function resolveMediaRef(
 async function fetchBytes(
 	ctx: PluginContext,
 	url: string,
-): Promise<{ bytes: Uint8Array; contentType: string } | null> {
+): Promise<{ bytes: Uint8Array<ArrayBuffer>; contentType: string } | null> {
 	let response: Response | null = null;
 	try {
 		if (!ctx.http) return null;
