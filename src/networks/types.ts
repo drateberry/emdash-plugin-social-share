@@ -4,7 +4,7 @@ export interface ShareRequest {
 	text: string;
 	url: string;
 	image?: {
-		bytes: Uint8Array;
+		bytes: Uint8Array<ArrayBuffer>;
 		contentType: string;
 		alt: string;
 	};

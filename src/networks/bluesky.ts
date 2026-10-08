@@ -148,7 +148,7 @@ export function createBlueskyAdapter(ctx: PluginContext): NetworkAdapter {
 async function uploadBlob(
 	ctx: PluginContext,
 	jwt: string,
-	bytes: Uint8Array,
+	bytes: Uint8Array<ArrayBuffer>,
 	contentType: string,
 ): Promise<unknown> {
 	if (!ctx.http) throw new Error("Bluesky uploadBlob requires network:fetch");
